@@ -14,7 +14,7 @@ public interface PriyathamGalisettyDAO {
 
 	int deletefromPG(String firstName);
 
-	Boolean insertintoPG();
+	Boolean insertintoPG(PriyathamGalisetty pg);
 
 	int updatePG();
 }

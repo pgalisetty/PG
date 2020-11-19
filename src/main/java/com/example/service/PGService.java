@@ -18,6 +18,6 @@ public interface PGService {
 	List<PriyathamGalisetty> getAllData();
 	List<PriyathamGalisetty> getPG(String firstName);
 	int deletefromPG(String fn);
-	Boolean insertintoPG();
+	Boolean insertintoPG(PriyathamGalisetty pg);
 	int updatePG();
 }

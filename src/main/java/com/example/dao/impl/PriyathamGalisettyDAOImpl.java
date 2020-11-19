@@ -150,16 +150,16 @@ public class PriyathamGalisettyDAOImpl implements PriyathamGalisettyDAO{
 	//Update priyathamgalisetty set last_name =? where id =?
 
 	@Override
-	public Boolean insertintoPG() {
+	public Boolean insertintoPG(PriyathamGalisetty pg) {
 		Boolean  rowsdel = false;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
 			conn = dataSource.getConnection();
 			pstmt = conn.prepareStatement("INSERT INTO priyathamgalisetty VALUES (?, ?, ?)");
-			pstmt.setString(1,"Venugopal");
-			pstmt.setString(2, "Galisetty");
-			pstmt.setLong(3, 3);
+			pstmt.setString(1,pg.getFirstName());
+			pstmt.setString(2, pg.getLastName());
+			pstmt.setLong(3, pg.getId());
 			pstmt.executeUpdate();
 			rowsdel = true;
 		}catch (Exception e) {

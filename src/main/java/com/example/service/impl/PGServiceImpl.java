@@ -32,9 +32,9 @@ public class PGServiceImpl implements PGService{
 	}
 
 	@Override
-	public Boolean insertintoPG() {
+	public Boolean insertintoPG(PriyathamGalisetty pg) {
 		// TODO Auto-generated method stub
-		return pgdao.insertintoPG();
+		return pgdao.insertintoPG(pg);
 	}
 
 	@Override

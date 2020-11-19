@@ -4,9 +4,11 @@ import java.util.List;
 
 import javax.websocket.server.PathParam;
 
+import org.hibernate.type.TrueFalseType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,8 +41,9 @@ public class PGController {
 	}
 	
 	@RequestMapping(value = "/insert" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Boolean insertintoPG() {
-		return ps.insertintoPG();
+	public Boolean insertintoPG(@RequestBody(required = false) PriyathamGalisetty pg) { 
+		System.out.println(pg!=null ? pg.toString() : "");
+		return ps.insertintoPG(pg);
 	}
 	
 	@RequestMapping(value = "/update" , method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
